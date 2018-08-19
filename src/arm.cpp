@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <iostream>
 #include "arm.h"
 #include "parts.h"
 #ifdef __APPLE__
@@ -5,8 +7,7 @@
 #else
     #include <GL/glut.h>
 #endif
-#include <stdio.h>
-#include <iostream>
+
 
 
 Arm::Arm() : ROTATION_FACTOR(5)

@@ -40,8 +40,7 @@ void Parts::drawPart(float rotation)
 {
     glRotatef(rotation, 0, 1, 0);
     glColor3f(1,1,1.5);
-    gluCylinder(gluNewQuadric(), 0.09, topPartRadius,
-                                                0.18, 70.0, 70.0);
+    gluCylinder(gluNewQuadric(), 0.09, topPartRadius,0.18, 70.0, 70.0);
 }
 
 void Parts::setFingerAngle(float angle)

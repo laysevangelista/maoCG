@@ -19,7 +19,6 @@ class Trabalho
         static void run(int argc, char* argv[]);
     private:
         static int currentPart;
-        static bool flyingMode;
 
         static Plataforma plat;
         static Arm arm;
@@ -32,7 +31,6 @@ class Trabalho
 };
 
 int Trabalho::currentPart = 1;
-bool Trabalho::flyingMode = false;
 
 Plataforma Trabalho::plat;
 Arm Trabalho::arm;
@@ -60,25 +58,20 @@ void Trabalho::run(int argc, char* argv[])
 
 void Trabalho::configure()
 {
-    GLfloat placeLight[4]={0.6,0.5,0.25,1.0};
-    GLfloat diffusedLight[4]={0.4,0.4,0.4,1.0}; // color
-    GLfloat specularLight[4]={1.0, 1.0, 1.0, 1.0}; //
-    GLfloat lightPosition[4]={10.0, 10.0, 1.0, 1.0}; // light position variation
+    GLfloat placeLight[4]={0.65,0.65,0.25,1.0};
+    GLfloat diffusedLight[4]={0.5,0.5,0.5,1.0};
+    GLfloat specularLight[4]={1.0, 1.0, 1.0, 1.0};
+    GLfloat lightPosition[4]={10.0, 10.0, 1.0, 1.0};
 
-    // material brightness 
     GLfloat specularity[4]={1.0,1.0,1.0,1.0};
     GLint materialSpecularity = 60;
 
-    // Gouraud colors
     glShadeModel(GL_SMOOTH);
 
-    // reflection 
     glMaterialfv(GL_FRONT,GL_SPECULAR, specularity);
     
-    // brightness concentration 
     glMateriali(GL_FRONT,GL_SHININESS,materialSpecularity);
 
-    // place light
     glLightModelfv(GL_LIGHT_MODEL_AMBIENT, placeLight);
 
     glLightfv(GL_LIGHT0, GL_AMBIENT, placeLight);
@@ -134,8 +127,7 @@ void Trabalho::specialKeysCallBack(int key, int x, int y)
         case GLUT_KEY_LEFT:
             if( modifier & GLUT_ACTIVE_CTRL )
                 arm.moveLeft();
-            else if(flyingMode)
-                arm.setFlyLeft();           
+            
             else
                 arm.rotateCounterClockwise(currentPart);
             break;
@@ -143,8 +135,7 @@ void Trabalho::specialKeysCallBack(int key, int x, int y)
         case GLUT_KEY_RIGHT:
             if( modifier & GLUT_ACTIVE_CTRL )
                 arm.moveRight();
-            else if(flyingMode)
-                arm.setFlyRight();
+            
             else
                 arm.rotateClockwise(currentPart);
             break;
@@ -152,8 +143,7 @@ void Trabalho::specialKeysCallBack(int key, int x, int y)
        case GLUT_KEY_UP:
             if( modifier & GLUT_ACTIVE_CTRL )
                 arm.moveUp();
-            else if(flyingMode)
-                arm.setFlyUp();
+            
             else if(Camera::getZoom() > 1)
                 Camera::zoomUp();
             break;
@@ -161,8 +151,7 @@ void Trabalho::specialKeysCallBack(int key, int x, int y)
        case GLUT_KEY_DOWN:
             if( modifier & GLUT_ACTIVE_CTRL )
                 arm.moveDown();
-             else if(flyingMode)
-                arm.setFlyDown();           
+            
             else if(Camera::getZoom() < 20)
                 Camera::zoomDown();
             break;
