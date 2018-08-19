@@ -15,8 +15,11 @@ Requisitos do programa:
 3) O movimento do sistema (pulso e dedos) deve ser controlado pelo usuário através do teclado ou mouse (ou combinações).
 
 4) O sistema deve ser observado através de um Viewport com uma transformação projetiva.
+ 
 
 5) Deve ser possível realizar, a partir de comandos do teclado ou mouse, movimentos de câmera (zoom e pan).
+   - UP | Down referentes ao Zoom
+   - SPACE  gira a plataforma
 
 Observações:
 
