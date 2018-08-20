@@ -9,7 +9,7 @@
 #include <iostream>
 #include <string.h>
 
-
+//utilizado para o calculo das rotações
 #define Pi 3.14
 
 using namespace std;
@@ -132,7 +132,6 @@ void robotarm(void)
     glutSolidCube(0.8);
     glPopMatrix();
     glPopMatrix();
-
 
 
     //dedo do meio
@@ -418,11 +417,7 @@ void keyboard(unsigned char key, int x, int y)
     }
 }
 
-
-
-
-
-
+//programa Principal
 int main(int argc, char** argv)
 {
     glutInit(&argc, argv);
