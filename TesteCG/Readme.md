@@ -1,8 +1,8 @@
 # Trabalho Final de Computaçao Gráfica
 
 <h2>TRABALHO REALIZADO POR: </h2>
-	<h3> Ronaldo Juniro 
-	     Lays F. E. Popova</h3>
+	<h3> Ronaldo Juniro </h3>
+    <h3>     Lays F. E. Popova</h3>
 	
 	
 <h4> trabalho desenvolvido no Visual Studio (Windows) e XCode (MacOS)
