@@ -1,5 +1,11 @@
 # Trabalho Final de Computaçao Gráfica
 
+<h2>TRABALHO REALIZADO POR: </h2>
+	<h3> Ronaldo Juniro </h3>
+	<h4> Lays F. E. Popova</h3>
+	
+	
+<h4> trabalho desenvolvido no Visual Studio (Windows) e XCode (MacOS)
 Crie um programa que simule uma mão mecânica em 3D.  
 
 A mão deve ser a mais parecida possível com a anatomia de uma mão humana, ou seja, conter um punho e cinco dedos articulados, sendo um dos dedos um polegar opositor (capaz de fazer um movimento de pinça com o dedo indicador). 
@@ -9,19 +15,18 @@ O programa deve ser programado em C++, utilizando a biblioteca OpenGL.
 Requisitos do programa:
 
 1) O usuário deve poder articular de forma independente cada dedo (abrir e fechar).
-
-2) O usuário também deve poder articular o pulso.
-	- tecla m -> levanta o pulso
-	- tecla n -> abaixa o pulso
-3) O movimento do sistema (pulso e dedos) deve ser controlado pelo usuário através do teclado ou mouse (ou combinações).
-	- tecla d -> fecha a mão
-	- tecla a -> abre a mão
 	- 1-> dedao
 	- 2-> indicador
 	- 3-> dedo do meio
 	- 4-> anelar
 	- 5-> mindinho
-
+2) O usuário também deve poder articular o pulso.
+	- tecla m -> levanta o pulso
+	- tecla n -> abaixa o pulso
+3) O movimento do sistema (pulso e dedos) deve ser controlado pelo usuário através do teclado ou mouse (ou combinações).
+	- tecla d -> fecha a mão
+	- tecla a -> abre a mão / fecha cada dedo
+	
 4) O sistema deve ser observado através de um Viewport com uma transformação projetiva.
  
 
