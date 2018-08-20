@@ -13,6 +13,9 @@
 
 using namespace std;
 static float zoom = 3,
+xtrans = 0.1,
+ytrans = 0.0,
+ztrans = 0.0,
 angle = 65.0,
 eyeX = 0.1,
 eyeY = 0.1,
@@ -104,7 +107,7 @@ void robotarm(void)
 
 
     //cotovelo
-    glTranslatef(0.1, 0.0, 0.0);
+    glTranslatef(xtrans, ytrans, ztrans);
     glRotatef((GLfloat)cot, 0.0, 0.0, 1.0);
     glTranslatef(1.0, 0.0, 0.0);
     glPushMatrix();
@@ -339,10 +342,12 @@ void keyboard(unsigned char key, int x, int y)
         break;
     case 'w':
         if (angle >= 10) angle -= 5;
+        xtrans -= 0.2;
         glutPostRedisplay();
         break;
     case 's':
         if (angle <= 130) angle += 5;
+        xtrans += 0.2;
         glutPostRedisplay();
         break;
     case 'c':
