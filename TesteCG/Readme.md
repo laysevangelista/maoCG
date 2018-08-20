@@ -14,7 +14,7 @@ Requisitos do programa:
 	- tecla m -> levanta o pulso
 	- tecla n -> abaixa o pulso
 3) O movimento do sistema (pulso e dedos) deve ser controlado pelo usuário através do teclado ou mouse (ou combinações).
-	- tecla f -> fecha a mão
+	- tecla d -> fecha a mão
 	- tecla a -> abre a mão
 	- 1-> dedao
 	- 2-> indicador
@@ -29,6 +29,10 @@ Requisitos do programa:
 
 	-tecla w -> almenta o zoom
 	-tecla s -> diminui o zoom
+	-teclas j e l -> giram o eixo x;
+	-teclas i e k -> giram o eixo z;
+	-teclas t e g -> transladam em y;
+	-teclas f e h -> transladam em x;
 
 
 Observações:

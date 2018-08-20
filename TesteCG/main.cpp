@@ -22,7 +22,8 @@ eyeY = 0.1,
 eyeZ = 0.1,
 windowRatio = 1;
 static int
-cot = 0, //cotovelo
+spin_z = 0, //cotovelo
+spin_x = 0,
 mao = 0,
 fumb = 0,
 point = 0,
@@ -108,7 +109,8 @@ void robotarm(void)
 
     //cotovelo
     glTranslatef(xtrans, ytrans, ztrans);
-    glRotatef((GLfloat)cot, 0.0, 0.0, 1.0);
+    glRotatef((GLfloat)spin_z, 0.0, 0.0, 1.0);
+    glRotatef((GLfloat)spin_x, 1.0, 0.0, 0.0);
     glTranslatef(1.0, 0.0, 0.0);
     glPushMatrix();
     glColor3f(0.3, 0, 0.5);
@@ -350,17 +352,44 @@ void keyboard(unsigned char key, int x, int y)
         xtrans += 0.2;
         glutPostRedisplay();
         break;
-    case 'c':
-        if (cot < 180)
-            cot = (cot + 5) % 360;
+    case 'j':
+        if (spin_z < 180)
+            spin_z = (spin_z + 5) % 360;
         glutPostRedisplay();
         break;
-    case 'v':
-        if (cot>0)
-            cot = (cot - 5) % 360;
+    case 'l':
+        if (spin_z>0)
+            spin_z = (spin_z - 5) % 360;
+        glutPostRedisplay();
+        break;
+    case 'i':
+        if (spin_x < 180)
+            spin_x = (spin_x + 5) % 360;
+        glutPostRedisplay();
+        break;
+    case 'k':
+        if (spin_x>0)
+            spin_x = (spin_x - 5) % 360;
+        glutPostRedisplay();
+        break;
+    case 't':
+        ytrans += 0.1;
         glutPostRedisplay();
         break;
 
+    case 'g':
+        ytrans -= 0.1;
+        glutPostRedisplay();
+        break;
+
+    case 'f':
+        xtrans -= 0.1;
+        glutPostRedisplay();
+        break;
+    case 'h':
+        xtrans += 0.1;
+        glutPostRedisplay();
+        break;
         //mao
     case 'm':
         if (mao < 90)
@@ -403,7 +432,7 @@ void keyboard(unsigned char key, int x, int y)
         glutPostRedisplay();
         break;
         // mao toda fechada
-    case 'f':
+    case 'd':
         if (fumb < 90)
             fumb = (fumb + 5) % 360;
         if (point < 90)
