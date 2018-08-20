@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <GL/glut.h>
+// #include <GLUT/glut.h>  usado no MacOs
 #include <cstdlib>
 #include <cstdio>
 #include <iostream>
@@ -54,60 +55,11 @@ void init(void)
     glEnable(GL_DEPTH_TEST);
 }
 
-GLuint LoadTextureRAW(const char * filename, int wrap)
-{
-    GLuint texture;
-    int l, a;
-    GLubyte * data;
-    FILE * file;
-    //para add textura
-    file = fopen(filename, "bmp");
-    if (file == NULL) {
-        cout << "Falha ao abrir o arquivo";
-        return 0;
-    }
-
-    // allocate buffer
-    l = 256;
-    a = 256;
-    data = new GLubyte[l * a * 3];
-
-    fread(data, l * a * 3, 1, file);
-    fclose(file);
-
-    glGenTextures(1, &texture);
-
-    glBindTexture(GL_TEXTURE_2D, texture);
-
-    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-
-
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-        GL_LINEAR);
-
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,
-        wrap ? GL_REPEAT : GL_CLAMP);
-    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,
-        wrap ? GL_REPEAT : GL_CLAMP);
-
-
-    gluBuild2DMipmaps(GL_TEXTURE_2D, 3, l, a, GL_RGB, GL_UNSIGNED_BYTE, data);
-
-    free(data);
-
-    return texture;
-}
-
 void robotarm(void)
 {
     glClear(GL_DEPTH_BUFFER_BIT);
-    glEnable(GL_TEXTURE_2D);
 
-
-    //cotovelo
+    //base do cotovelo
     glTranslatef(xtrans, ytrans, ztrans);
     glRotatef((GLfloat)spin_z, 0.0, 0.0, 1.0);
     glRotatef((GLfloat)spin_x, 1.0, 0.0, 0.0);
