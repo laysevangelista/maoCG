@@ -11,7 +11,8 @@ Requisitos do programa:
 1) O usuário deve poder articular de forma independente cada dedo (abrir e fechar).
 
 2) O usuário também deve poder articular o pulso.
-	- tecla m
+	- tecla m -> levanta o pulso
+	- tecla n -> abaixa o pulso
 3) O movimento do sistema (pulso e dedos) deve ser controlado pelo usuário através do teclado ou mouse (ou combinações).
 	- tecla f -> fecha a mão
 	- tecla a -> abre a mão
@@ -25,6 +26,9 @@ Requisitos do programa:
  
 
 5) Deve ser possível realizar, a partir de comandos do teclado ou mouse, movimentos de câmera (zoom e pan).
+
+	-tecla w -> almenta o zoom
+	-tecla s -> diminui o zoom
 
 
 Observações:
